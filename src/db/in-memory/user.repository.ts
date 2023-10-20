@@ -1,9 +1,10 @@
+console.log('Loaded UserRepositoryImpl from disk');
 import {injectable} from "tsyringe";
 import {UserEntity} from "../../ghost/user/entity";
 import {UserRepository} from "../../ghost/user/repository";
 
 @injectable()
-export class UserRepositoryImpl implements UserRepository {
+export default class UserRepositoryImpl implements UserRepository {
   store: Map<string, UserEntity> = new Map();
   constructor() {
     const alice = new UserEntity("1", "alice");

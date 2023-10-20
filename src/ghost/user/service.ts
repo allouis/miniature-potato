@@ -1,8 +1,9 @@
+console.log('Loaded UserService from disk');
 import {inject, injectable} from "tsyringe";
 import {UserRepository} from "./repository";
 
 @injectable()
-export class UserService {
+export default class UserService {
   constructor(@inject("Repository") private readonly repository: UserRepository) {}
 
   async getAll(): Promise<DTO[]> {
